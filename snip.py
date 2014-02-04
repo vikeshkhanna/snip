@@ -42,7 +42,7 @@ class PAGE_CONSTANTS:
 	userfile='userfile'
 
 def get_usage():
-	return """snip submit <filename> --<sunetid> [-hw 1] [-q 2] [-v] [-f] [-h]
+	return """snip <filename> --<sunetid> [-hw 1] [-q 2] [-v] [-f] [-h]
 			v: Verbose response from SNAP server.
 			f: Force. Does not ask for confirmation before posting.
 			h: Help
