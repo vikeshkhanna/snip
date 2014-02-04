@@ -32,7 +32,7 @@ class ARGS:
 	SUNETID='--'
 	VERBOSE='v'
 	FORCE='f'
-	HELP='-h'
+	HELP='h'
 
 class PAGE_CONSTANTS:
 	hw='hw'
@@ -42,9 +42,10 @@ class PAGE_CONSTANTS:
 	userfile='userfile'
 
 def get_usage():
-	return """snip submit <filename> [-hw 1] [-q 2] [--vikesh] [-v] [-f]
+	return """snip submit <filename> [-hw 1] [-q 2] [--vikesh] [-v] [-f] [-h]
 			v: Verbose response from SNAP server.
 			f: Force. Does not ask for confirmation before posting.
+			h: Help
 		"""
 
 def main(argv):
@@ -66,9 +67,9 @@ def main(argv):
 				options[ARGS.QUESTION] = argv[i+1]
 			elif arg[1:]==ARGS.VERBOSE:
 				options[ARGS.VERBOSE] = True
-			elif args[1:]==ARGS.FORCE:
+			elif arg[1:]==ARGS.FORCE:
 				options[ARGS.FORCE] = True
-			elif args[1:]==ARGS.HELP:
+			elif arg[1:]==ARGS.HELP:
 				print(get_usage())
 				return 0
 			else:
@@ -140,7 +141,7 @@ def main(argv):
 
 	print("")
 	
-	confirm = None
+	confirm = ""
 	force = options[ARGS.FORCE]
 
 	print("You have chosen to submit %s for %s. SunetID: %s.")
