@@ -2,13 +2,13 @@
 
 snip is a simple terminal client to submit SNAP homework assignments from the command line. 
 
-##INSTALLATION
+###INSTALLATION
 
 ```bash
 python setup.py install 
 ```
 
-##USAGE
+###USAGE
 ```bash
 snip p2.d.py
 ```
