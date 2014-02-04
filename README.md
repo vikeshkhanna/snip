@@ -17,4 +17,4 @@ snip p2.d.py --vikesh
 ```
 
 ###TERMS
-This program is provided as-in without any warranty. The liability of submitting the homework properly lies entirely with you. 
+This program is provided as-is without any warranty. The liability of submitting the homework properly lies entirely with you. 
