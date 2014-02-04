@@ -42,10 +42,11 @@ class PAGE_CONSTANTS:
 	userfile='userfile'
 
 def get_usage():
-	return """snip submit <filename> [-hw 1] [-q 2] [--vikesh] [-v] [-f] [-h]
+	return """snip submit <filename> --<sunetid> [-hw 1] [-q 2] [-v] [-f] [-h]
 			v: Verbose response from SNAP server.
 			f: Force. Does not ask for confirmation before posting.
 			h: Help
+			sunetid: Replace with your sunetid
 		"""
 
 def main(argv):
@@ -77,6 +78,10 @@ def main(argv):
 
 	if not os.path.isfile(filename):
 		print("File does not exist")
+		sys.exit(1)
+
+	if options[ARGS.SUNETID]==None:
+		print("sunetid not found. Please see help for more details")
 		sys.exit(1)
 
 	URL = "http://snap.stanford.edu/submit/index.php"
@@ -144,10 +149,10 @@ def main(argv):
 	confirm = ""
 	force = options[ARGS.FORCE]
 
-	print("You have chosen to submit %s for %s. SunetID: %s.")
+	print("You have chosen to submit %s for %s. SunetID: %s."%(qcache[qchoice], hcache[hchoice], options[ARGS.SUNETID]))
 
 	while force!=True and confirm.lower()!='y' and confirm.lower()!='n':
-		print("Confirm [y/n]: "%(qcache[qchoice], hcache[hchoice], options[ARGS.SUNETID])),
+		print("Confirm [y/n]: "),
 		confirm = raw_input()
 
 	if confirm =='n':
