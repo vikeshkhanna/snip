@@ -16,3 +16,5 @@ python setup.py install
 snip p2.d.py
 ```
 
+###TERMS
+This program is provided as-in without any warranty. The liability of submitting the homework properly lies entirely with you. 
