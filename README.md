@@ -13,7 +13,7 @@ python setup.py install
 
 ###USAGE
 ```bash
-snip p2.d.py
+snip p2.d.py --vikesh
 ```
 
 ###TERMS
